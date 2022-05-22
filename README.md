@@ -1,2 +1,2 @@
-# colibabovca
-Genealogic tree
+# Колибабовка
+Генеалогическое древо
