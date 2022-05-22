@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.goat1000.com/tagcanvas.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>TagCanvas - an HTML5 Canvas Tag Cloud</title>
+<link rel="stylesheet" type="text/css" charset="utf-8" href="./TagCanvas - an HTML5 Canvas Tag Cloud_files/all.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<script src="tagcanvas.min.js" type="text/javascript" async=""></script>
+<script type="text/javascript">
+//<![CDATA[
+var oopts = {
+ textFont: 'Impact,Arial Black,sans-serif',
+ textHeight: 20,
+ maxSpeed: 0.1,
+ decel: 0.9,
+ depth: 0.99,
+ outlineColour: '#f6f',
+ outlineThickness: 10,
+ pulsateTo: 0.2,
+ pulsateTime: 0.5,
+ wheelZoom: false
+}, ttags = 'taglist', lock, shape = 'sphere';
+window.onload = function() {
+ TagCanvas.textFont = 'Trebuchet MS, Helvetica, sans-serif';
+ TagCanvas.textColour = '#00f';
+ TagCanvas.textHeight = 14;
+ TagCanvas.outlineMethod = 'block';
+ TagCanvas.outlineColour = '#acf';
+ TagCanvas.maxSpeed = 0.03;
+ TagCanvas.minBrightness = 0.2;
+ TagCanvas.depth = 0.92;
+ TagCanvas.pulsateTo = 0.6;
+ TagCanvas.initial = [0.1,-0.1];
+ TagCanvas.decel = 0.98;
+ TagCanvas.reverse = true;
+ TagCanvas.hideTags = false;
+ TagCanvas.shadow = '#ccf';
+ TagCanvas.shadowBlur = 3;
+ TagCanvas.weight = false;
+ TagCanvas.imageScale = null;
+ TagCanvas.fadeIn = 1000;
+ TagCanvas.clickToFront = 600;
+ try {
+  TagCanvas.Start('tagcanvas','taglist');
+  TagCanvas.Start('smallCanvas','moreTags', oopts);
+  f('options');
+ } catch(e) {
+  document.getElementById('cmsg').style.display='none';
+  document.getElementsByTagName('canvas')[0].style.border='0';
+ }
+};
+function BGImage(e) {
+ document.getElementById('tagcanvas').style.backgroundImage = (e.checked ? 'url(/images/canvas_bg1.png)' : 'none');
+}
+function f(a) {
+ TagCanvas.Start('otherCanvas',a,oopts);
+ return false;
+}
+function restart() {
+ TagCanvas.shape = shape;
+ TagCanvas.lock = lock;
+ TagCanvas.Start('tagcanvas',ttags);
+}
+function changetags(t) {
+ ttags = t;
+ restart();
+}
+function changeshape(s) {
+ var locks = { hcylinder: 'x', vcylinder: 'y', hring: 'x', vring: 'y', sphere: '' };
+ lock = locks[s] || '';
+ shape = s;
+ TagCanvas.initial = (lock == 'x' && [0,0.2]) || (lock == 'y' && [0.2,0]) || [0.2,0.2];
+ restart();
+}
+function tpu(s) {
+ document.getElementById('sout').innerHTML = s.innerHTML;
+ return false;
+}
+//]]>
+</script>
+</head>
+<body>
+
+<canvas id="tagcanvas" width="560" height="400" style="width: 95vw; cursor: pointer;">
+
+<p>your browser does not support the canvas tag.</p>
+</canvas>
+
+<div style="display: none">
+  <div id="taglist">
+    <ul>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+	  <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake1" onclick="return tpu(this)">Ссылка на один</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake2" onclick="return tpu(this)">Ссылка на два</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+    </ul>
+    <ul>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">SVGGraph</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">JPEG Saver</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">Downloads</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">Google</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">Yahoo!</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">Microsoft</a></li>
+      <li><a href="ttps://www.goat1000.com/tagcanvas.php#" onclick="return tpu(this)">BBC</a></li>
+    </ul>
+  </div>
+
+
+
+  
+</div>
+
+
+
+</body></html>
